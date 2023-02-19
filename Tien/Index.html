@@ -11,20 +11,19 @@
     <div class="Bai 1">
         <h1>BÀI 1</h1>
         <div class="mb-3 row" style="padding-left: 10px; width: 800px;">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Nhập số</label>
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nhập số muốn kiểm tra</label>
             <div class="col-sm-10">
             <input type="text" class="form-control" id="num1">
             </div>
         </div>
         <button type="button" class="btn btn-primary" onclick="findEven()">Chạy</button>
         <div class="res">
-            <h3 style="margin-top: 20px; margin-left: 30px;">Kết quả</h3>
             <div id="result1" style="margin-left: 30px;"></div>
         </div>
         <script>
             function findEven(){
                 var n1 = Number(document.getElementById('num1').value);
-                var res1 = "";
+                var res1 = "Sổ chẳn nhỏ hơn "+n1+" là: <br>";
                 if(n1<4) alert("Số nhỏ quá quy định");
 
                 else{
@@ -43,33 +42,40 @@
         <h1>BÀI 2</h1>
         <div id="check" style="text-align: center; width: 200px; height: 100px; background-color: blue; color: white; font-size: 30px;">Check</div>
         <script>
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
             var div = document.getElementById('check');
             div.addEventListener('mouseover', function() {
-              div.style.backgroundColor = 'red';
+                div.style.backgroundColor = getRandomColor();
             });
             div.addEventListener('mouseout', function() {
-              div.style.backgroundColor = 'blue';
+                div.style.backgroundColor = 'blue';
             });
         </script>
     </div>
-    <div class="Bai 1" style="margin-top: 20px;">
+    <div class="Bai 3" style="margin-top: 20px;">
         <h1>BÀI 3</h1>
         <div class="mb-3 row" style="padding-left: 10px; width: 800px;">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Nhập số</label>
+            <label for="inputPassword" class="col-sm-2 col-form-label">Nhập độ dài của tam giác</label>
             <div class="col-sm-10">
             <input type="text" class="form-control" id="num2">
             </div>
         </div>
         <button type="button" class="btn btn-primary" onclick="numberOneTriangle()">Chạy</button>
         <div class="res">
-            <h3 style="margin-top: 20px; margin-left: 30px;">Kết quả</h3>
             <div id="result2" style="margin-left: 30px;"></div>
         </div>
         <script>
             function numberOneTriangle(){
                 var n2 = Number(document.getElementById('num2').value);
                 var s = "";
-                var res2 = "";
+                var res2 = "Tam giác có cạnh bằng "+n2+" là: <br>";
                 for(let i=1; i<=n2; i++){
                     s += "1";
                     res2 += s + "<br>";
@@ -78,6 +84,21 @@
                 console.log(res2)
                 document.getElementById('result2').innerHTML = res2;
             }
+        </script>
+    </div>
+    <div class="Bai 2" style="margin-top: 20px;">
+        <h1>BÀI 4</h1>
+        <div id="clock" style="font-size: 70px; background-color: blue; color: white;" ></div>
+        <script>
+            function updateClock() {
+              var now = new Date();
+              var hours = now.getHours();
+              var minutes = now.getMinutes();
+              var seconds = now.getSeconds();
+              var timenow = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+              document.getElementById("clock").textContent = timenow;
+            }
+            setInterval(updateClock, 1000);
         </script>
     </div>
 </body>
