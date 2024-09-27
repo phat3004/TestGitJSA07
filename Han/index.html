@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="head">Random color</button>
+    </div>
+    <p id="demo"></p>
+    <script>
+        //Bài 2
+        const setBg = () => {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = "#" + randomColor;
+         color.innerHTML = "#" + randomColor;
+        }
+
+        head.addEventListener("click", setBg);
+        setBg();
+        //Bài 3
+        function numberOneTriangle() {
+            const numbers = ["1", "11", "111", "1111", "11111", "111111"];
+
+            let text = "";
+            for (let i = 0; i < numbers.length; i++) {
+            text += numbers[i] + "<br>";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+        //Bài 4
+        //Con không biết làm, khó quá thầy ơi, hic
+        
+    </script>
+</body>
+</html>
